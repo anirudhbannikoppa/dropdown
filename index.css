@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+
+
+.select-items{
+  display: flex;
+  justify-content:space-around;
+  margin:10px;
+  margin-right: 30px;
+  
+}
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .5px solid black;
+  
+}
+
+.dropdown {
+  margin: 2px; /* Adds 15px space on left and right */
+  display: flex; 
+}
+
+.dropdown label {
+  display: block;
+  margin-bottom: 6px;
+  font-size:20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.dropdown select {
+  width: 200px;
+  padding: 10px;
+  margin-left:20px
+}
