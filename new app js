@@ -1,0 +1,96 @@
+// src/App.js
+import React, { useState } from "react";
+import "./App.css";
+
+const DropdownExample = () => {
+  const [firstDropdownValue, setFirstDropdownValue] = useState("");
+  const [secondDropdownValue, setSecondDropdownValue] = useState("");
+
+  const handleFirstDropdownChange = (event) => {
+    setFirstDropdownValue(event.target.value);
+  };
+
+  const handleSecondDropdownChange = (event) => {
+    setSecondDropdownValue(event.target.value);
+  };
+
+  return (
+    <div className="dropdown-container">
+      <div className="select-items">
+        <div className="dropdown">
+          <label htmlFor="firstDropdown">Domain:</label>
+          <select
+            id="firstDropdown"
+            value={firstDropdownValue}
+            onChange={handleFirstDropdownChange}
+          >
+            <option value="">SELECT</option>
+            <option value="All Domains">All Domains</option>
+            <option value="Banking">Banking</option>
+            <option value="Energy and Utilities">Energy and Utilities</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Hi-Tech">Hi-Tech</option>
+            <option value="Hospitality">Hospitality</option>
+            <option value="Incurance">Incurance</option>
+            <option value="Life Science">Life Science</option>
+          </select>
+        </div>
+
+        <div className="dropdown">
+          <label htmlFor="secondDropdown">Info Type:</label>
+          <select
+            id="secondDropdown"
+            value={secondDropdownValue}
+            onChange={handleSecondDropdownChange}
+          >
+            <option value="">SELECT</option>
+            <option value="WhitePaper">WhitePaper</option>
+            <option value="Case Study">Case Study</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="result">
+        <p>
+          {firstDropdownValue === "Energy and Utilities" && (
+            <div className="additional-info">
+              <p>
+                Title:AI-powered due diligence platform for private equality
+              </p>
+              <p>
+                Description:A leading global consulting firm partners to develop
+                an AI-powered due diligence platform, automating market analysis
+                and insight generation for private equity and decisions”
+              </p>
+              <p>Client Name : Client </p>
+              <p>Account Name : others</p>
+              <p>Author Name: NA</p>
+              <p>Info type: white paper</p>
+            </div>
+          )}
+          {firstDropdownValue === "Healthcare" && (
+            <div className="additional-info">
+              <p>Domain : Healthcare</p>
+              <p>Cloud Provider: NA</p>
+              <p>Tech Stack : Image processing</p>
+              <p>Info type : white paper</p>
+              <p>Link :https://mphasis-deep learning image</p>
+            </div>
+          )}
+          {firstDropdownValue === "All Domain" && (
+            <div className="additional-info">
+              <p>Domain:”All Domains</p>
+              <p>Cloud Provider:All clouds </p>
+              <p>Tech Stack : Machine Learning |deep Learning “</p>
+              <p>“Info Type. : “Case Study</p>
+            </div>
+          )}
+          You have selected Domain as: {firstDropdownValue} and Info Type as:{" "}
+          {secondDropdownValue}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default DropdownExample;
